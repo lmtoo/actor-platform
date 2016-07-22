@@ -8492,7 +8492,7 @@
               "doc": [
                 {
                   "type": "reference",
-                  "argument": "members",
+                  "argument": "users",
                   "category": "full",
                   "description": "  Group members"
                 },
@@ -8509,11 +8509,22 @@
                     "type": "list",
                     "childType": {
                       "type": "struct",
+                      "childType": "Member"
+                    }
+                  },
+                  "id": 3,
+                  "name": "members"
+                },
+                {
+                  "type": {
+                    "type": "list",
+                    "childType": {
+                      "type": "struct",
                       "childType": "UserOutPeer"
                     }
                   },
                   "id": 1,
-                  "name": "members"
+                  "name": "users"
                 },
                 {
                   "type": {
@@ -10403,6 +10414,36 @@
                 },
                 "id": 3,
                 "name": "optimizations"
+              }
+            ]
+          }
+        },
+        {
+          "type": "rpc",
+          "content": {
+            "name": "LeaveAndDelete",
+            "header": 2721,
+            "response": {
+              "type": "reference",
+              "name": "Seq"
+            },
+            "doc": [
+              "Leave group and Delete Chat",
+              {
+                "type": "reference",
+                "argument": "groupPeer",
+                "category": "full",
+                "description": "Group peer"
+              }
+            ],
+            "attributes": [
+              {
+                "type": {
+                  "type": "struct",
+                  "childType": "GroupOutPeer"
+                },
+                "id": 1,
+                "name": "groupPeer"
               }
             ]
           }
